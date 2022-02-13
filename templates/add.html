@@ -1,0 +1,15 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>Library</title>
+{% endblock %}
+{% block content %}
+    <form action="{{ url_for('add') }}" method="POST">
+        <label>Book Name</label>
+        <input name="title" type="text" >
+        <label>Book Author</label>
+        <input name="author" type="text" >
+        <label>Rating</label>
+        <input name="rating" type="text" >
+        <button type="submit">Add Book</button>
+    </form>
+{% endblock %}

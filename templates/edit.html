@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>EDIT BOOK</title>
+{% endblock %}
+
+{% block content %}
+    <form class="form-inline" action="{{ url_for('edit') }}" method="POST">
+      <div class="form-group mb-2">
+        <p>Book Name: {{book.title}}</p>
+        <p>Current Rating {{book.rating}}</p>
+        <label  for="staticEmail2" class="sr-only">{{ book.title }}</label>
+        <input name="id"  hidden="hidden" readonly class="form-control-plaintext" id="staticEmail2" value="{{ book.id }}">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="rating" class="sr-only">RATING</label>
+        <input name='rating' type="text" class="form-control" id="rating" placeholder="New Rating">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Change Rating</button>
+    </form>
+
+{% endblock %}
+
